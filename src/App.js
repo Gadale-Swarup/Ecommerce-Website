@@ -40,12 +40,10 @@ function App() {
     {
       prodId: 1,
       prodName: "iphone11",
-      proddes:
-        "Sleek design, dual cameras, fast performance, long battery life",
+      proddes:"Sleek design, dual cameras, fast performance, long battery life",
       color: "White",
       price: 30000,
-      image:
-        "https://powermaccenter.com/cdn/shop/files/A012000x2000_a1b30c33-5929-4b64-91cf-a38c71656f8a.jpg?v=1691109975&width=1445",
+      image:"https://powermaccenter.com/cdn/shop/files/A012000x2000_a1b30c33-5929-4b64-91cf-a38c71656f8a.jpg?v=1691109975&width=1445",
     },
     {
       prodId: 2,
@@ -61,8 +59,7 @@ function App() {
       proddes: "Advanced cameras, A15 Bionic chip, 5G, longer battery life.",
       color: "Green",
       price: 450000,
-      image:
-        "https://iplanet.one/cdn/shop/files/iPhone_13_Green_PDP_Image_Position-1A__GBEN.jpg?v=1691170460",
+      image: "https://iplanet.one/cdn/shop/files/iPhone_13_Green_PDP_Image_Position-1A__GBEN.jpg?v=1691170460",
     },
     {
       prodId: 4,
@@ -70,8 +67,7 @@ function App() {
       proddes: "Advanced cameras, A15 Bionic chip, 5G, longer battery life.",
       color: "blue",
       price: 50000,
-      image:
-        "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
+      image:"https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
     },
     {
       prodId: 5,
@@ -79,8 +75,7 @@ function App() {
       proddes: "Advanced cameras, A15 Bionic chip, 5G, longer battery life.",
       color: "Pink",
       price: 55000,
-      image:
-        "https://iplanet.one/cdn/shop/files/iPhone_15_Pink_PDP_Image_Position-1__en-IN.jpg?v=1695427946&width=1445",
+      image:"https://iplanet.one/cdn/shop/files/iPhone_15_Pink_PDP_Image_Position-1__en-IN.jpg?v=1695427946&width=1445",
     },
     {
       prodId: 6,
@@ -88,8 +83,7 @@ function App() {
       proddes: "Advanced cameras, A15 Bionic chip, 5G, longer battery life.",
       color: "Black",
       price: 60000,
-      image:
-        "https://iplanet.one/cdn/shop/files/iPhone_15_Pro_Natural_Titanium_PDP_Image_Position-1__en-IN.jpg?v=1695435375",
+      image:"https://iplanet.one/cdn/shop/files/iPhone_15_Pro_Natural_Titanium_PDP_Image_Position-1__en-IN.jpg?v=1695435375",
     },
   ];
 
@@ -97,7 +91,6 @@ function App() {
     <div>
       <Navbar count={cart} cart={cart} username={username} />
       <Modalitem cart={cart} handleRemove={handleRemove}/>
-
       <Routes>
         <Route path="/" element={<Navigate to="/register" />} />
         <Route
