@@ -14,10 +14,12 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import Modalitem from "./components/Modalitem";
+// import Modalitem from "./components/Modalitem";
 import About from "./components/About";
+import Modalitem from "./components/Modalitem";
 
 function App() {
+
   const [cart, setCart] = useState([]);
   const [username, setUsername] = useState(localStorage.getItem("username"));
 
@@ -25,13 +27,13 @@ function App() {
     setUsername(username);
     localStorage.setItem("username", username);
   };
+  
+  const handleRemove = (id) => {
+    setCart(cart.find((prodId) => prodId !==id));
+  };
 
   const addToCart = (product) => {
     setCart((cart) => [...cart, product]);
-  };
-
-  const handleRemove = (id) => {
-    setCart((cart) => cart.find((prodId) => prodId !== id));
   };
 
   const Products = [
@@ -94,6 +96,7 @@ function App() {
   return (
     <div>
       <Navbar count={cart} cart={cart} username={username} />
+      <Modalitem cart={cart} handleRemove={handleRemove}/>
 
       <Routes>
         <Route path="/" element={<Navigate to="/register" />} />

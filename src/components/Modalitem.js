@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function Modalitem({ cart = [], handleRemove }) {
+function Modalitem({ handleRemove,cart=[]}) { 
+  
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const totalAmount = cart.reduce((acc, item) => acc + item.price, 0);
-
-  console.log("Modalitem render");
-  console.log("handleRemove:", handleRemove);
 
   return (
     <>
@@ -41,7 +39,7 @@ function Modalitem({ cart = [], handleRemove }) {
                   </div>
                   <button
                     className="btn btn-primary"
-                    onClick={() => handleRemove(id)}
+                    onClick={() => {handleRemove(id)}}
                   >
                     ❌
                   </button>
