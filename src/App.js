@@ -9,7 +9,6 @@ import "./App.css";
 import "./components/Theme.css";
 import "react-toastify/dist/ReactToastify.css";
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
@@ -19,23 +18,6 @@ import About from "./components/About";
 import Modalitem from "./components/Modalitem";
 
 function App() {
-
-  const [cart, setCart] = useState([]);
-  const [username, setUsername] = useState(localStorage.getItem("username"));
-
-  const handleregister = (username) => {
-    setUsername(username);
-    localStorage.setItem("username", username);
-  };
-  
-  const handleRemove = (id) => {
-    setCart(cart.find((prodId) => prodId !==id));
-  };
-
-  const addToCart = (product) => {
-    setCart((cart) => [...cart, product]);
-  };
-
   const Products = [
     {
       prodId: 1,
@@ -86,6 +68,25 @@ function App() {
       image:"https://iplanet.one/cdn/shop/files/iPhone_15_Pro_Natural_Titanium_PDP_Image_Position-1__en-IN.jpg?v=1695435375",
     },
   ];
+
+  const [cart, setCart] = useState([]);
+  const [username, setUsername] = useState(localStorage.getItem("username"));
+
+  const handleregister = (username) => {
+    setUsername(username);
+    localStorage.setItem("username", username);
+  };
+  
+  const handleRemove = (id) => {
+    const cart1 =(cart.filter((item) => item.prodId !==id));
+    setCart(cart1);
+  };
+
+  const addToCart = (product) => {
+    setCart((cart) => [...cart, product]);
+  };
+
+
 
   return (
     <div>
